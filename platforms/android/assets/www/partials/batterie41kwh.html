@@ -1,5 +1,4 @@
 <div ng-controller="appCtrl">
-   <!-- <h3>Batterie 41kWh</h3> -->
     <div id="autonomie-bloc" ng-repeat="el in initData">
         <h2><img src="img/electric-car.png" />Autononie</h2>
         <div id="autonomie-info">
@@ -15,7 +14,6 @@
              </div>
         </div>
     </div>
-
     <div id="vitesse">
         <div id="label-vitesse"><img src="img/speed.png"/>VITESSE</div>
         <select ng-model="selectSpeed" ng-change="changeAutonomie()">
@@ -30,7 +28,6 @@
             <option>50 KMH</option>
         </select>
     </div>
-
     <div id="temperature">
         <div id="label-temperature"><img src="img/temperature.png"/>TEMPERATURE</div>
         <select ng-model="selectTpt" ng-change="changeAutonomie()">
@@ -55,7 +52,7 @@
     <div id="ac">
         <div class="switch-label"><img src="img/flocon.png"/>CLIM</div>
         <div class="switch-bloc">
-            <div class="switch demo">
+            <div class="switch prod">
                 <input id="checkAc" ng-model="selectAc" ng-change="changeAutonomie()" type="checkbox" />
                 <label><i></i></label>
             </div>
@@ -64,7 +61,7 @@
     <div id="heater">
         <div class="switch-label"><img src="img/heater.png"/>CHAUFFAGE</div>
         <div class="switch-bloc">
-            <div class="switch demo">
+            <div class="switch prod">
                 <input id="checkHeater" ng-model="selectHeater" ng-change="changeAutonomie()" type="checkbox"/>
                 <label><i></i></label>
             </div>
@@ -73,7 +70,7 @@
     <div id="eco">
         <div class="switch-label"><img src="img/eco.png"/>MODE ECO</div>
         <div class="switch-bloc">
-            <div class="switch demo">
+            <div class="switch prod">
                 <input id="checkEco" ng-model="selectEco" ng-change="changeAutonomie()" type="checkbox"/>
                 <label><i></i></label>
             </div>

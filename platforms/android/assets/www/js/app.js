@@ -1,4 +1,4 @@
-
+//lancement de la fonction onDeviceReady quand le device est prêt
 document.addEventListener("deviceready", onDeviceReady, false);
 
 function onDeviceReady() {
@@ -16,8 +16,8 @@ function onBackKeyDown(e) {
 }
 
 function dialogAbout() {
-    var message = "Cette appli développée pour mon besoin personnel, permet d'obtenir l'autonomie de ma voiture "+
-        "sur mon smartphone.\nLes résultats affichés sont valables si la route est parfaitement plate et si la température " +
+    var message = "Cette appli permet d'obtenir l'autonomie théorique de votre Zoé "+
+        "sur votre smartphone.\nLes résultats affichés sont valables si la route est parfaitement plate et si la température " +
         " ne varie pas au cours du trajet.\nLes valeurs obtenues sont données à titre indicatif.";
     var title = "A PROPOS";
     var buttonName = "Retour";
@@ -36,6 +36,8 @@ function onConfirm(button) {
     }
 }
 
+
+//App Angular
 var app = angular.module('app',['ngRoute']);
 
 //routing
@@ -76,11 +78,6 @@ app.factory('infoZoe', ['$http',  function($http){
             var retour5 = [];
             var retour6 = [];
 
-            //transformation des string en boolean
-            //ac = ac == 'true' ? true : false;
-            //heater = heater == 'true' ? true : false;
-            //eco = eco == 'true' ? true : false;
-
             //on récupère les données avec une vitesse donnée
             for(var key in data){
                 if(data[key].speed == speed){
@@ -88,60 +85,52 @@ app.factory('infoZoe', ['$http',  function($http){
                 }
             }
 
-            console.log('ac :'+ ac);
-            console.log('heating :' + heater)
-
-
+            //on récupère les données avec une vitesse et température données
             for(var key in retour1){
                 if(retour1[key].temperature == tpt){
                     retour2.push(retour1[key]);
                 }
             }
-            console.log(retour2);
 
+            //on récupère les données avec une vitesse, une température et une taille de jantes données
             for(var key in retour2){
                 if(retour2[key].wheels == wheels){
                     retour3.push(retour2[key]);
                 }
             }
 
-            console.log(retour3);
-
+            //on récupère les données avec une vitesse, une température, une taille de jantes données et en ajoutant le booléen de la clim
             for(var key in retour3){
-
-                console.log(ac);
 
                 if(retour3[key].ac === ac){
                     retour4.push(retour3[key]);
                 }
             }
-            console.log(ac);
-            console.log(retour4);
 
+            //on ajoute le chauffage
             for(var key in retour4){
                 if(retour4[key].heater == heater){
                     retour5.push(retour4[key]);
                 }
             }
 
-            console.log(retour5);
 
+            // on ajoute le mode eco
             for(var key in retour5){
                 if(retour5[key].eco == eco){
                     retour6.push(retour5[key]);
                 }
             }
 
-            console.log(retour6);
+            //on retourne le tableau avec les données voulues
             return retour6;
         }
     }
 }]);
 
+//controleur gérant les boutons liens
 app.controller("cssActive", function(){
-    var url = $(location).attr('href').split('!');
-
-    console.log(url[1]);
+    var url = $(location).attr('href').split('!'); //on récupère la fin de l'url en cours
 
     if(url[1] == '/home2'){
         $("#bouton2").addClass('active');
@@ -153,7 +142,7 @@ app.controller("cssActive", function(){
 
 });
 
-
+//controleur gérant les données
 app.controller("appCtrl",['$scope', 'infoZoe', function($scope, infoZoe){
     var dataZoe;
     $scope.selectSpeed = "80 KMH";
@@ -163,22 +152,23 @@ app.controller("appCtrl",['$scope', 'infoZoe', function($scope, infoZoe){
     $scope.selectHeater = false;
     $scope.selectEco = false;
 
-    infoZoe.recupData("js/data2.json").
+    infoZoe.recupData("js/data.json").
     then(function(response){
             dataZoe = response.data;
             $scope.dataAffiche = dataZoe;
+
         if($scope.selectTpt == "+20" || $scope.selectTpt == "+25"){
             $("#checkHeater").attr("disabled","disabled");
         }
 
             $scope.initData = infoZoe.recupAutonomie(dataZoe, "80 KMH", "+20", "16", false, false, false);
-            console.log("lecture OK");
 
-            console.log(dataZoe);
         },function (error) {
             console.log(error);
         }
     );
+
+    //fonction modifiant les données trouvées en fonction des choix de l'utilisateur
     $scope.changeAutonomie = function(){
 
 
@@ -202,4 +192,3 @@ app.controller("appCtrl",['$scope', 'infoZoe', function($scope, infoZoe){
         $scope.initData = infoZoe.recupAutonomie(dataZoe, $scope.selectSpeed, $scope.selectTpt, $scope.selectWheels, $scope.selectAc, $scope.selectHeater, $scope.selectEco);
     }
 }]);
-

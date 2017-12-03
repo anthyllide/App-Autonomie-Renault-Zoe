@@ -11,11 +11,11 @@
     <feature name="Notification">
         <param name="android-package" value="org.apache.cordova.dialogs.Notification" />
     </feature>
-    <name>Autonomie Zoé</name>
+    <name>Autonomie Renault Zoé</name>
     <description>
-       Simulateur d'autonomie de batterie pour voiture Zoé.
+       Simulateur d'autonomie de la voiture électrique Renault Zoé.
     </description>
-    <author email="choucaxa@hotmail.fr" href="">
+    <author email="choucaxa@hotmail.fr" href="http://www.alexandra-gonzalez.xyz">
         Alexandra Gonzalez
     </author>
     <content src="index.html" />
