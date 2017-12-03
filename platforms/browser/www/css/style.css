@@ -1,0 +1,370 @@
+/* GLOBALS */
+
+*,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-size: 62.5%;
+    font-family: Arial;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color : #000000;
+}
+
+p{
+    font-size: 0.8rem;
+}
+
+nav {
+    display: flex;
+    width: 60%;
+    margin : 10px 0px 0px 2%;
+}
+
+nav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 25px;
+    box-shadow: 0px 0px 5px 1px #eaeaea;
+    border-top: 1px solid #cecece;
+    padding: 0.4rem;
+    border-right: 1px solid #cecece;
+    border-bottom: none;
+    border-left: 1px solid #cecece;
+    background-color: #f7f7f7;
+    font-weight: normal;
+    -webkit-transition: font-size 1s; /* For Safari 3.1 to 6.0 */
+    transition: font-size 1s;
+}
+
+nav a:focus, nav a:active, nav a:hover, .active {
+    font-weight: bold;
+    font-size: 1.2em;
+    background-color: #b8b8b8;
+    border-right: 2px solid #cecece;
+    border-left: 2px solid #cecece;
+}
+
+header div {
+    background-color: #2196F3;
+    display : flex;
+}
+
+header div h1{
+    text-align: center;
+    font-size: 1.2rem;
+    height : 50px;
+    display: flex;
+    align-items: center;
+    color : #FFFFFF;
+    width: 82%;
+    padding-left: 5%;
+}
+
+header div button {
+    width : 10%;
+    margin-left: 5%;
+    background: url(../img/circular-question-white-24.png) no-repeat center;
+    background-color: #2196F3;
+    border: none;
+    cursor: pointer;
+}
+
+header div a {
+    display: flex;
+    text-align: center;
+    font-size: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+header nav ul {
+    display: flex;
+    margin-left: -40px;
+    margin-top: -5px;
+    justify-content: space-between;
+}
+
+header nav ul li {
+    border : solid 1px #FFFFFF;
+    background-color: #cccccc;
+    width: 49%;
+    display: flex;
+    height: 60px;
+}
+
+header nav ul li a {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#autonomie-bloc {
+    padding : 5px;
+    box-shadow: 0px 0px 10px 1px #eaeaea;
+}
+
+#autonomie-bloc h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.8em;
+    margin-top: 1%;
+}
+
+
+#autonomie-bloc h2 img {
+    display: block;
+    margin-right: 10px;
+}
+
+#autonomie-info {
+    display:flex;
+    justify-content: space-around;
+}
+
+#autonomie-info div {
+    display : flex;
+    flex-direction: column;
+    height : 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+#autonomie-info div p:first-child {
+    color : #00bcee;
+    font-size: 1.5em;
+}
+
+#autonomie-info div p:first-child span {
+    font-size: 2.5em;
+}
+
+#autonomie-info div p:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#autonomie-info div p:last-child img {
+    display: block;
+    margin-right: 5px;
+}
+
+#autonomie-info div#separation {
+    border-left: solid #eaeaea 3px;
+    width: 3px;
+    height: 40px;
+    margin-top: 15px;
+}
+
+#vitesse, #temperature, #jantes{
+    margin-top: 10px;
+    display: flex;
+    border : 1px solid #e6e6e6;
+    height : 58px;
+}
+
+#label-vitesse, #label-temperature, #label-jantes {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: #f7f7f7;
+    width: 60%;
+    font-size: 1.4em;
+    border-right: 1px solid #e6e6e6;
+    padding-left: 5%;
+}
+
+#label-vitesse img, #label-temperature img, #label-jantes img {
+    margin-right: 15px;
+}
+
+#vitesse select, #temperature select, #jantes select {
+    width: 40%;
+    font-size: 1.5em;
+    border: none;
+    padding-left: 10%;
+    font-weight: bold;
+    background-color: #FFFFFF;
+}
+
+#vitesse select option, #temperature select option, #label-jantes select option {
+    font-weight: bold;
+}
+
+/* CSS SWITCH*/
+
+.switch {
+    margin: 25px;
+    position: relative;
+}
+
+.switch label {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+}
+
+.switch input {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.switch.prod {
+    width: 90px; /*180*/
+    height: 25px; /*50*/
+}
+
+.switch.prod label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #a5a39d;
+    border-radius: 40px;
+    box-shadow:
+            inset 0 3px 8px 1px rgba(0,0,0,0.2),
+            0 1px 0 rgba(255,255,255,0.5);
+}
+
+.switch.prod label:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -8px; right: -8px; bottom: -8px; left: -8px;
+    border-radius: inherit;
+    background: #ababab;
+    background: -moz-linear-gradient(#f2f2f2, #ababab);
+    background: -ms-linear-gradient(#f2f2f2, #ababab);
+    background: -o-linear-gradient(#f2f2f2, #ababab);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#ababab));
+    background: -webkit-linear-gradient(#f2f2f2, #ababab);
+    background: linear-gradient(#f2f2f2, #ababab);
+    box-shadow: 0 0 10px rgba(0,0,0,0.3),
+    0 1px 1px rgba(0,0,0,0.25);
+}
+
+.switch.prod label i {
+    display: block;
+    height: 100%;
+    width: 60%;
+    border-radius: inherit;
+    background: silver;
+    position: absolute;
+    z-index: 2;
+    right: 40%;
+    top: 0;
+    background: #b2ac9e;
+    background: -moz-linear-gradient(#f7f2f6, #b2ac9e);
+    background: -ms-linear-gradient(#f7f2f6, #b2ac9e);
+    background: -o-linear-gradient(#f7f2f6, #b2ac9e);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#f7f2f6), to(#b2ac9e));
+    background: -webkit-linear-gradient(#f7f2f6, #b2ac9e);
+    background: linear-gradient(#f7f2f6, #b2ac9e);
+    box-shadow:
+            inset 0 1px 0 white,
+            0 0 8px rgba(0,0,0,0.3),
+            0 5px 5px rgba(0,0,0,0.2);
+}
+
+.switch.prod label i:after {
+    content: "";
+    position: absolute;
+    left: 15%;
+    top: 25%;
+    width: 70%;
+    height: 50%;
+    background: #d2cbc3;
+    background: -moz-linear-gradient(#cbc7bc, #d2cbc3);
+    background: -ms-linear-gradient(#cbc7bc, #d2cbc3);
+    background: -o-linear-gradient(#cbc7bc, #d2cbc3);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#cbc7bc), to(#d2cbc3));
+    background: -webkit-linear-gradient(#cbc7bc, #d2cbc3);
+    background: linear-gradient(#cbc7bc, #d2cbc3);
+    border-radius: inherit;
+}
+
+.switch.prod label i:before {
+    content: "off";
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: bold;
+    color: rgba(0,0,0,0.4);
+    text-shadow: 0 1px 0 #bcb8ae, 0 -1px 0 #97958e;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    right: -50%;
+}
+
+.switch.prod input:checked ~ label {
+    background: #00bcee;
+}
+
+.switch.prod input:checked ~ label i {
+    right: -1%;
+}
+
+.switch.prod input:checked ~ label i:before {
+    content: "on";
+    right: 115%;
+    color: #468fb9;
+    text-shadow: 0 1px 0 #91ccf3, 0 -1px 0 #0e4fae;
+}
+
+#ac, #heater, #eco {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    border: 1px solid #eaeaea;
+}
+
+.switch-bloc {
+    width: 40%;
+}
+
+.switch-label {
+    display: flex;
+    align-items: center;
+    background-color: #f7f7f7;
+    width: 60%;
+    font-size: 1.4em;
+    border-right: 1px solid #e6e6e6;
+    padding-left: 5%;
+}
+
+.switch-label img {
+    display: block;
+    margin-right: 5px;
+}

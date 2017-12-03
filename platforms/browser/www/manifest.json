@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Autonomie Zoé",
+  "short_name": "Autonomie Zoé",
+  "version": "io.cordova.hellocordova",
+  "description": "Simulateur d'autonomie de batterie pour voiture Zoé.",
+  "author": "Alexandra Gonzalez",
+  "icons": [],
+  "start_url": "index.html"
+}

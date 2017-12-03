@@ -1,0 +1,79 @@
+<div ng-controller="appCtrl">
+    <div id="autonomie-bloc" ng-repeat="el in initData">
+        <h2><img src="img/electric-car.png" />Autononie</h2>
+        <div id="autonomie-info">
+            <div>
+                <p><span>{{el.ranges[2].distance_range}}</span> <sup>km</sup></p>
+                <p><img src="img/engine.png" />R90</p>
+            </div>
+            <div id="separation">
+            </div>
+            <div>
+                <p><span>{{el.ranges[1].distance_range}}</span> <sup>km</sup></p>
+                <p><img src="img/engine.png" />Q90</p>
+             </div>
+        </div>
+    </div>
+    <div id="vitesse">
+        <div id="label-vitesse"><img src="img/speed.png"/>VITESSE</div>
+        <select ng-model="selectSpeed" ng-change="changeAutonomie()">
+            <option>130 KMH</option>
+            <option>120 KMH</option>
+            <option>110 KMH</option>
+            <option>100 KMH</option>
+            <option>90 KMH</option>
+            <option>80 KMH</option>
+            <option>70 KMH</option>
+            <option>60 KMH</option>
+            <option>50 KMH</option>
+        </select>
+    </div>
+    <div id="temperature">
+        <div id="label-temperature"><img src="img/temperature.png"/>TEMPERATURE</div>
+        <select ng-model="selectTpt" ng-change="changeAutonomie()">
+            <option>+25</option>
+            <option>+20</option>
+            <option>+15</option>
+            <option>+5</option>
+            <option>+0</option>
+            <option>-5</option>
+            <option>-10</option>
+            <option>-15</option>
+        </select>
+    </div>
+    <div id="jantes">
+        <div id="label-jantes"><img src="img/wheel.png"/>JANTES (en ")</div>
+        <select ng-model="selectWheels" ng-change="changeAutonomie()">
+            <option>17</option>
+            <option>16</option>
+            <option>15</option>
+    </select>
+    </div>
+    <div id="ac">
+        <div class="switch-label"><img src="img/flocon.png"/>CLIM</div>
+        <div class="switch-bloc">
+            <div class="switch prod">
+                <input id="checkAc" ng-model="selectAc" ng-change="changeAutonomie()" type="checkbox" />
+                <label><i></i></label>
+            </div>
+        </div>
+    </div>
+    <div id="heater">
+        <div class="switch-label"><img src="img/heater.png"/>CHAUFFAGE</div>
+        <div class="switch-bloc">
+            <div class="switch prod">
+                <input id="checkHeater" ng-model="selectHeater" ng-change="changeAutonomie()" type="checkbox"/>
+                <label><i></i></label>
+            </div>
+        </div>
+    </div>
+    <div id="eco">
+        <div class="switch-label"><img src="img/eco.png"/>MODE ECO</div>
+        <div class="switch-bloc">
+            <div class="switch prod">
+                <input id="checkEco" ng-model="selectEco" ng-change="changeAutonomie()" type="checkbox"/>
+                <label><i></i></label>
+            </div>
+        </div>
+    </div>
+</div>
