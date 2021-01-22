@@ -1,10 +1,11 @@
 {
-  "name": "io.cordova.hellocordova",
-  "version": "1.0.0",
-  "displayName": "HelloCordova",
+  "name": "fr.gonzalez.alexandra",
+  "version": "1.0.1",
+  "displayName": "autonomieZoeV2",
   "cordova": {
     "platforms": [
       "browser",
+      "ios",
       "android"
     ],
     "plugins": {
@@ -14,10 +15,13 @@
     }
   },
   "dependencies": {
-    "cordova-android": "^6.3.0",
     "cordova-browser": "^5.0.1",
     "cordova-plugin-dialogs": "^1.3.3",
     "cordova-plugin-splashscreen": "^4.0.3",
     "cordova-plugin-whitelist": "1"
+  },
+  "devDependencies": {
+    "cordova-android": "^9.0.0",
+    "cordova-ios": "^6.1.1"
   }
 }

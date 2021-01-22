@@ -1,10 +1,10 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "Autonomie Zoé",
-  "short_name": "Autonomie Zoé",
-  "version": "io.cordova.hellocordova",
-  "description": "Simulateur d'autonomie de batterie pour voiture Zoé.",
+  "name": "Autonomie Renault Zoé V2",
+  "short_name": "Autonomie Renault Zoé V2",
+  "version": "fr.gonzalez.alexandra.autonomieZoe",
+  "description": "Simulateur d'autonomie de la voiture électrique Renault Zoé.",
   "author": "Alexandra Gonzalez",
   "icons": [],
   "start_url": "index.html"

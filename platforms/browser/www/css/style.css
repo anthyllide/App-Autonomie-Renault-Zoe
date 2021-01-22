@@ -39,7 +39,7 @@ nav a {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 25px;
+    height: 30px;
     box-shadow: 0px 0px 5px 1px #eaeaea;
     border-top: 1px solid #cecece;
     padding: 0.4rem;
@@ -127,9 +127,8 @@ header nav ul li a {
     align-items: center;
     text-align: center;
     font-size: 1.8em;
-    margin-top: 1%;
+    margin-top: 5%;
 }
-
 
 #autonomie-bloc h2 img {
     display: block;
@@ -366,5 +365,5 @@ header nav ul li a {
 
 .switch-label img {
     display: block;
-    margin-right: 5px;
+    margin-right: 15px;
 }

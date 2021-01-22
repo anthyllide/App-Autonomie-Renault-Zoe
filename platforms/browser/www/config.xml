@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Autonomie Zoé</name>
+<widget id="fr.gonzalez.alexandra.autonomieZoe" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Autonomie Renault Zoé V2</name>
     <description>
-       Simulateur d'autonomie de batterie pour voiture Zoé.
+       Simulateur d'autonomie de la voiture électrique Renault Zoé.
     </description>
-    <author email="choucaxa@hotmail.fr" href="">
+    <author email="contact@alexandra-gonzalez.fr" href="https://www.alexandra-gonzalez.fr">
         Alexandra Gonzalez
     </author>
     <content src="index.html" />

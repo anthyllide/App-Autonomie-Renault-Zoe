@@ -47,10 +47,14 @@ app.config(['$routeProvider',
         // Système de routage
         $routeProvider
             .when('/home', {
-                templateUrl: 'partials/batterie41kwh.html',
+                templateUrl: 'partials/batterie52kwh.html',
                 controller : 'cssActive'
             })
             .when('/home2', {
+                templateUrl: 'partials/batterie41kwh.html',
+                controller : 'cssActive'
+            })
+            .when('/home3', {
                 templateUrl: 'partials/batterie22kwh.html',
                 controller : 'cssActive'
             })
@@ -132,11 +136,17 @@ app.factory('infoZoe', ['$http',  function($http){
 app.controller("cssActive", function(){
     var url = $(location).attr('href').split('!'); //on récupère la fin de l'url en cours
 
-    if(url[1] == '/home2'){
+    if(url[1] == '/home'){
+        $("#bouton1").addClass('active');
+        $("#bouton2").removeClass('active');
+        $("#bouton3").removeClass('active');
+    } else if (url[1] == '/home2'){
         $("#bouton2").addClass('active');
         $("#bouton1").removeClass('active');
-    } else {
-        $("#bouton1").addClass('active');
+        $("#bouton3").removeClass('active');
+    }else if(url[1] == '/home3'){
+        $("#bouton3").addClass('active');
+        $("#bouton1").removeClass('active');
         $("#bouton2").removeClass('active');
     }
 
